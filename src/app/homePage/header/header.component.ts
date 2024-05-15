@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-
+import { MagicApiService } from '../../services/magic-api.service';
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -12,6 +12,8 @@ export class HeaderComponent {
   selectedBlock: string = '';
 
   @Output() searchEvent = new EventEmitter<{ name: string, block: string }>();
+
+  constructor(private magicApiService: MagicApiService) {}
 
   search() {
     this.searchEvent.emit({ name: this.cardName, block: this.selectedBlock });

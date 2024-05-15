@@ -1,6 +1,5 @@
-<app-header></app-header>
-<app-main>
-  </app-main>
-  
-  
+<app-hearder (searchEvent)="searchSets($event)"></app-hearder>
+<app-main [cards]="cards"></app-main>
+<app-cartas *ngFor="let card of boosterCards" [card]="card"></app-cartas>
+
   <router-outlet></router-outlet>
